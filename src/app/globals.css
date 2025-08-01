@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+@plugin "tailwindcss-animate";
+
+@theme{
+  --color-secondary: #EA2F30;
+}
+
+footer{
+background: #FBA7A9;
+background: linear-gradient(to top, #FBA7A9 0%, #FFEEEE 100%);
+
+
+}
