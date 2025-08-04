@@ -23,7 +23,7 @@ export default function HomePage() {
           </p>
           <Link
             className="bg-secondary rounded-2xl px-4 py-3 font-medium text-white"
-            href="/products"
+            href="#main_products"
           >
             Ver productos
           </Link>

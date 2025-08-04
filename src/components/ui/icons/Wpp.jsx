@@ -3,7 +3,7 @@ import React from "react";
 
 export default function Wpp() {
   return (
-    <Link className="absolute bottom-5 right-5" href="/">
+    <Link className="fixed bottom-5 right-5" href="/">
       <svg
         width="87"
         height="87"

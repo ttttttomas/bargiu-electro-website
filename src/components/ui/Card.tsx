@@ -1,8 +1,13 @@
+import Link from "next/link";
+
 import {openSans} from "@/app/layout";
 
 export default function Card() {
   return (
-    <section className={`w-88 flex-col items-center ${openSans.className}`}>
+    <Link
+      className={`w-88 flex-col items-center ${openSans.className}`}
+      href="/products/climatizacion/1"
+    >
       <div className="relative">
         <small className="bg-secondary absolute top-2 left-2 rounded-xl px-4 py-1 text-[10px] font-bold text-white italic">
           SIN STOCK
@@ -19,6 +24,6 @@ export default function Card() {
         </p>
         <b className="text-secondary text-3xl">$879.000</b>
       </div>
-    </section>
+    </Link>
   );
 }

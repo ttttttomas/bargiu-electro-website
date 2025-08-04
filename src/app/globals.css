@@ -6,6 +6,10 @@
   --color-secondary: #EA2F30;
 }
 
+:root{
+  scroll-behavior: smooth;
+}
+
 footer{
 background: #FBA7A9;
 background: linear-gradient(to top, #FBA7A9 0%, #FFEEEE 100%);
