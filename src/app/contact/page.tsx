@@ -1,14 +1,38 @@
 "use client";
 import {useState} from "react";
+import axios from "axios";
 
 import Popup from "@/components/ui/Popup";
 
 export default function ContactPage() {
   const [showPopup, setShowPopup] = useState(false);
+  const [formData, setFormData] = useState({
+    full_name: "",
+    email: "",
+    message: "",
+  });
+  const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const {name, value} = e.target;
+
+    setFormData({...formData, [name]: value});
+  };
+  const onChangeTextarea = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    const {name, value} = e.target;
+
+    setFormData({...formData, [name]: value});
+  };
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setShowPopup(true);
-    console.log("enviado");
+    console.log(formData);
+    try {
+      axios.post(
+        "https://mdpuf8ksxirarnlhtl6pxo2xylsjmtq8-barelectro-api.bargiuelectro.com/contact/formContact",
+        formData,
+      );
+      setShowPopup(true);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
@@ -26,15 +50,36 @@ export default function ContactPage() {
           <label className="w-full text-xl" htmlFor="nombre">
             Nombre y apellido *
           </label>
-          <input className="w-full border-b p-1" id="nombre" placeholder="Nombre" type="text" />
+          <input
+            className="w-full border-b p-1"
+            id="nombre"
+            name="full_name"
+            placeholder="Nombre"
+            type="text"
+            onChange={onChange}
+          />
           <label className="w-full text-xl" htmlFor="email">
             Email *
           </label>
-          <input className="w-full border-b p-1" id="email" placeholder="Email" type="email" />
+          <input
+            className="w-full border-b p-1"
+            id="email"
+            name="email"
+            placeholder="Email"
+            type="email"
+            onChange={onChange}
+          />
           <label className="w-full text-xl" htmlFor="mensaje">
             Escribí tu consulta *
           </label>
-          <textarea className="border-b" id="mensaje" placeholder="Mensaje" rows={10}></textarea>
+          <textarea
+            className="border-b"
+            id="mensaje"
+            name="message"
+            placeholder="Mensaje"
+            rows={10}
+            onChange={onChangeTextarea}
+          ></textarea>
         </section>
         <button
           className="bg-secondary w-full cursor-pointer rounded-lg border-2 border-black py-1 text-xl font-bold text-white"

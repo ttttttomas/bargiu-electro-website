@@ -3,10 +3,12 @@ import Link from "next/link";
 import {openSans} from "@/app/layout";
 import Wpp from "@/components/ui/icons/Wpp";
 import Card from "@/components/ui/Card";
+import Categorys from "@/components/ui/Categorys";
 
 export default function HomePage() {
   return (
     <main>
+      <Categorys />
       <section id="hero">
         <div
           className="absolute -z-10 h-screen w-full opacity-40"

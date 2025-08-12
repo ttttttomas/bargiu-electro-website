@@ -65,7 +65,7 @@ export default function Header() {
         <div className="flex items-center gap-2">
           <Lupa />
           <input
-            className="z-50 font-bold text-black italic"
+            className="z-50 p-1 font-bold text-black italic"
             placeholder="¿Qué estás buscando?"
             type="text"
           />
