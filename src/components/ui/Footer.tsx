@@ -7,23 +7,23 @@ export default function Footer() {
         <img alt="" src="logo.png" />
         <div className="flex flex-col gap-10 divide-x-0 divide-y divide-black/30 md:flex-row md:divide-x md:divide-y-0">
           <ul className="text-medium flex flex-col items-center justify-center gap-2 px-10 md:items-start md:justify-start">
-            <Link href="products/cocinas">Cocinas y Hornos</Link>
-            <Link href="products/climatizacion">Climatización</Link>
-            <Link href="products/termotanques">Termotanques</Link>
-            <Link href="products/heladeras">Heladeras / Freezers</Link>
-            <Link href="products/lavarropas">Lavarropas / Secarropas</Link>
+            <Link href="/products/category/cocinas">Cocinas y Hornos</Link>
+            <Link href="/products/category/climatizacion">Climatización</Link>
+            <Link href="/products/category/termotanques">Termotanques</Link>
+            <Link href="/products/category/heladeras">Heladeras / Freezers</Link>
+            <Link href="/products/category/lavarropas">Lavarropas / Secarropas</Link>
           </ul>
           <ul className="flex flex-col items-center justify-center gap-2 px-10 md:items-start md:justify-start">
-            <Link href="/products/deportes">Deportes y Fitness</Link>
-            <Link href="/products/belleza">Belleza y cuidado personal</Link>
-            <Link href="/products/electros">Pequeños Electros</Link>
-            <Link href="/products/tecnologia">Tecnología</Link>
-            <Link href="/products/herramientas">Herramientas</Link>
+            <Link href="/products/category/deportes">Deportes y Fitness</Link>
+            <Link href="/products/category/belleza">Belleza y cuidado personal</Link>
+            <Link href="/products/category/electros">Pequeños Electros</Link>
+            <Link href="/products/category/tecnologia">Tecnología</Link>
+            <Link href="/products/category/herramientas">Herramientas</Link>
           </ul>
           <ul className="flex flex-col items-center justify-center gap-2 px-10 md:items-start md:justify-start">
-            <Link href="/products/textiles">Textiles</Link>
-            <Link href="/products/airelibre">Aire libre</Link>
-            <Link href="/products/colchones">Colchones</Link>
+            <Link href="/products/category/textiles">Textiles</Link>
+            <Link href="/products/category/airelibre">Aire libre</Link>
+            <Link href="/products/category/colchones">Colchones</Link>
           </ul>
         </div>
       </section>

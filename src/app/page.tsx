@@ -5,7 +5,6 @@ import {Product} from "@/types";
 import {openSans} from "@/lib/fonts";
 import Wpp from "@/components/ui/icons/Wpp";
 import Card from "@/components/ui/Card";
-import Categorys from "@/components/ui/Categorys";
 
 import productService from "./services/productServices";
 
@@ -17,7 +16,6 @@ export default async function HomePage() {
 
   return (
     <main>
-      <Categorys />
       <section id="hero">
         <div
           className="absolute -z-10 h-screen w-full opacity-40"
@@ -46,7 +44,10 @@ export default async function HomePage() {
         <Link className="my-5 text-center italic underline" href="/">
           Ver todos
         </Link>
-        <div className="mb-20 flex flex-wrap items-center justify-center gap-10 md:justify-between">
+        <div
+          className="mb-20 flex flex-wrap items-center justify-center gap-10 md:justify-between"
+          id="main_products"
+        >
           {climatizacion.slice(0, 4).map((product) => (
             <Card key={product.id} product={product} />
           ))}
