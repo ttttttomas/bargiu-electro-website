@@ -7,23 +7,23 @@ export default function Footer() {
         <img alt="" src="logo.png" />
         <div className="flex flex-col gap-10 divide-x-0 divide-y divide-black/30 md:flex-row md:divide-x md:divide-y-0">
           <ul className="text-medium flex flex-col items-center justify-center gap-2 px-10 md:items-start md:justify-start">
-            <Link href="/">Cocinas y Hornos</Link>
-            <Link href="/">Climatización</Link>
-            <Link href="/">Termotanques</Link>
-            <Link href="/">Heladeras / Freezers</Link>
-            <Link href="/">Lavarropas / Secarropas</Link>
+            <Link href="products/cocinas">Cocinas y Hornos</Link>
+            <Link href="products/climatizacion">Climatización</Link>
+            <Link href="products/termotanques">Termotanques</Link>
+            <Link href="products/heladeras">Heladeras / Freezers</Link>
+            <Link href="products/lavarropas">Lavarropas / Secarropas</Link>
           </ul>
           <ul className="flex flex-col items-center justify-center gap-2 px-10 md:items-start md:justify-start">
-            <Link href="/">Deportes y Fitness</Link>
-            <Link href="/">Belleza y cuidado personal</Link>
-            <Link href="/">Pequeños Electros</Link>
-            <Link href="/">Tecnología</Link>
-            <Link href="/">Herramientas</Link>
+            <Link href="/products/deportes">Deportes y Fitness</Link>
+            <Link href="/products/belleza">Belleza y cuidado personal</Link>
+            <Link href="/products/electros">Pequeños Electros</Link>
+            <Link href="/products/tecnologia">Tecnología</Link>
+            <Link href="/products/herramientas">Herramientas</Link>
           </ul>
           <ul className="flex flex-col items-center justify-center gap-2 px-10 md:items-start md:justify-start">
-            <Link href="/">Textiles</Link>
-            <Link href="/">Aire libre</Link>
-            <Link href="/">Colchones</Link>
+            <Link href="/products/textiles">Textiles</Link>
+            <Link href="/products/airelibre">Aire libre</Link>
+            <Link href="/products/colchones">Colchones</Link>
           </ul>
         </div>
       </section>

@@ -3,7 +3,11 @@ import React from "react";
 
 export default function Wpp() {
   return (
-    <Link className="fixed bottom-5 right-5" href="/">
+    <Link
+      className="fixed bottom-5 right-5"
+      target="_blank"
+      href="https://wa.me/+541135587877"
+    >
       <svg
         width="87"
         height="87"

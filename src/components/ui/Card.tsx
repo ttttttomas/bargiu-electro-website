@@ -1,28 +1,36 @@
 import Link from "next/link";
 
-import {openSans} from "@/app/layout";
+import {Product} from "@/types";
 
-export default function Card() {
+import {openSans} from "@/lib/fonts";
+
+export default function Card({product}: {product: Product}) {
+  const formattedPrice = product.price.toLocaleString("es-ES", {
+    currency: "ARS",
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  });
+
   return (
     <Link
       className={`w-88 flex-col items-center ${openSans.className}`}
-      href="/products/climatizacion/1"
+      href={`/products/category/${product.category}/${product.id}`}
     >
       <div className="relative">
         <small className="bg-secondary absolute top-2 left-2 rounded-xl px-4 py-1 text-[10px] font-bold text-white italic">
-          SIN STOCK
+          {product.stock ? "En stock" : "Sin stock"}
         </small>
         <img
           alt="card"
-          className="h-62 w-full rounded-2xl border border-black object-cover"
-          src="/card-image.png"
+          className="h-62 w-full rounded-2xl border border-black bg-white object-contain"
+          src={`https://${product.main_image}`}
         />
       </div>
-      <div className="flex flex-col items-center justify-center gap-2 px-5 py-2">
+      <div className="justify- flex flex-col items-center gap-2 px-5 py-2">
         <p className="text-center font-semibold">
-          Aire acondicionado Split 2356KL FC Inverter Midea Carrier
+          {product.title.length > 35 ? product.title.slice(0, 35) + "..." : product.title}
         </p>
-        <b className="text-secondary text-3xl">$879.000</b>
+        <b className="text-secondary text-3xl">${formattedPrice}</b>
       </div>
     </Link>
   );

@@ -1,10 +1,19 @@
 import Link from "next/link";
 
-import {openSans} from "@/app/layout";
+import {Product} from "@/types";
+
+import {openSans} from "@/lib/fonts";
 import Wpp from "@/components/ui/icons/Wpp";
 import Card from "@/components/ui/Card";
 
-export default function HomePage() {
+import productService from "./services/productServices";
+
+export default async function HomePage() {
+  const products: Product[] = await productService.getAll();
+
+  const climatizacion = products.filter((p) => p.category === "climatizacion");
+  const lavarropas = products.filter((p) => p.category === "lavarropas");
+
   return (
     <main>
       <section id="hero">
@@ -36,20 +45,18 @@ export default function HomePage() {
           Ver todos
         </Link>
         <div className="mb-20 flex flex-wrap items-center justify-center gap-10 md:justify-between">
-          <Card />
-          <Card />
-          <Card />
-          <Card />
+          {climatizacion.slice(0, 4).map((product) => (
+            <Card key={product.id} product={product} />
+          ))}
         </div>
         <h2 className="text-center text-4xl font-medium italic">Lavarropas / Secarropas</h2>
         <Link className="my-5 text-center italic underline" href="/">
           Ver todos
         </Link>
         <div className="ustify-between mb-20 flex flex-wrap gap-10">
-          <Card />
-          <Card />
-          <Card />
-          <Card />
+          {lavarropas.slice(0, 4).map((product) => (
+            <Card key={product.id} product={product} />
+          ))}
         </div>
       </section>
       <section id="images">
@@ -65,7 +72,7 @@ export default function HomePage() {
             className="h-[500px] w-96 rounded-xl object-cover"
             src="heladera-home.png"
           />
-          <Link className="font-semibold underline" href="/">
+          <Link className="font-semibold underline" href="/products/category/heladeras">
             Ver mas Heladeras...
           </Link>
         </div>
@@ -75,7 +82,7 @@ export default function HomePage() {
             className="h-[500px] w-96 rounded-xl object-cover"
             src="televisor-home.png"
           />
-          <Link className="font-semibold underline" href="/">
+          <Link className="font-semibold underline" href="/products/category/televisores">
             Ver mas Televisores...
           </Link>
         </div>
@@ -85,7 +92,7 @@ export default function HomePage() {
             className="h-[500px] w-96 rounded-xl object-cover"
             src="microondas-home.png"
           />
-          <Link className="font-semibold underline" href="/">
+          <Link className="font-semibold underline" href="/products/category/microondas">
             Ver mas Microondas...
           </Link>
         </div>
