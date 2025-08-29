@@ -1,19 +1,14 @@
 "use client";
 import axios from "axios";
 import {useState} from "react";
-<<<<<<< HEAD
 import {useForm} from "react-hook-form";
 import {Toaster, toast} from "sonner";
-=======
-import axios from "axios";
->>>>>>> 1243bbd38c9f3328dc48dc1e32f74d030535e023
 
 import Popup from "@/components/ui/Popup";
 
 export default function ContactPage() {
   const {register, handleSubmit} = useForm();
   const [showPopup, setShowPopup] = useState(false);
-<<<<<<< HEAD
 
   const onSubmit = handleSubmit((data) => {
     try {
@@ -32,36 +27,6 @@ export default function ContactPage() {
       toast.error("Error al enviar formulario");
     }
   });
-=======
-  const [formData, setFormData] = useState({
-    full_name: "",
-    email: "",
-    message: "",
-  });
-  const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const {name, value} = e.target;
-
-    setFormData({...formData, [name]: value});
-  };
-  const onChangeTextarea = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-    const {name, value} = e.target;
-
-    setFormData({...formData, [name]: value});
-  };
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    console.log(formData);
-    try {
-      axios.post(
-        "https://mdpuf8ksxirarnlhtl6pxo2xylsjmtq8-barelectro-api.bargiuelectro.com/contact/formContact",
-        formData,
-      );
-      setShowPopup(true);
-    } catch (error) {
-      console.log(error);
-    }
-  };
->>>>>>> 1243bbd38c9f3328dc48dc1e32f74d030535e023
 
   return (
     <main className="mx-auto my-20 flex w-2/3 items-center justify-center border bg-white">
@@ -83,39 +48,21 @@ export default function ContactPage() {
             Nombre y apellido *
           </label>
           <input
-<<<<<<< HEAD
             {...register("full_name")}
             className="w-full border-b p-1"
             id="name"
             placeholder="Nombre"
             type="text"
-=======
-            className="w-full border-b p-1"
-            id="nombre"
-            name="full_name"
-            placeholder="Nombre"
-            type="text"
-            onChange={onChange}
->>>>>>> 1243bbd38c9f3328dc48dc1e32f74d030535e023
           />
           <label className="w-full text-xl" htmlFor="email">
             Email *
           </label>
           <input
-<<<<<<< HEAD
             {...register("email")}
             className="w-full border-b p-1"
             id="email"
             placeholder="Email"
             type="email"
-=======
-            className="w-full border-b p-1"
-            id="email"
-            name="email"
-            placeholder="Email"
-            type="email"
-            onChange={onChange}
->>>>>>> 1243bbd38c9f3328dc48dc1e32f74d030535e023
           />
           <label className="w-full text-xl" htmlFor="mensaje">
             Escribí tu consulta *
@@ -123,16 +70,9 @@ export default function ContactPage() {
           <textarea
             className="border-b"
             id="mensaje"
-<<<<<<< HEAD
             placeholder="Mensaje"
             rows={10}
             {...register("message")}
-=======
-            name="message"
-            placeholder="Mensaje"
-            rows={10}
-            onChange={onChangeTextarea}
->>>>>>> 1243bbd38c9f3328dc48dc1e32f74d030535e023
           ></textarea>
         </section>
         <button
