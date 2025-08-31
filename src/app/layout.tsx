@@ -21,6 +21,11 @@ export const metadata: Metadata = {
     "argentina",
     "bargiu electro",
   ],
+  icons: {
+    icon: "/favi.png",
+    shortcut: "/favi.png",
+    apple: "/favi.png",
+  },
 };
 
 export default function RootLayout({children}: {children: React.ReactNode}) {

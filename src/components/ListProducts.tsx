@@ -48,7 +48,7 @@ export default function ListProducts({onChange}: {onChange: () => void}) {
           <>
             <input
               className="my-2 w-full px-5 text-sm font-bold text-black md:text-base"
-              placeholder="¿Que vehiculo estás buscando?"
+              placeholder="¿Que producto estás buscando?"
               type="text"
               onChange={handleChange}
             />
@@ -56,7 +56,7 @@ export default function ListProducts({onChange}: {onChange: () => void}) {
               {filteredProducts.map((product: Product) => (
                 <Link
                   key={product.id}
-                  className="flex items-center justify-around gap-2"
+                  className="flex items-center justify-between gap-2"
                   href={`/products/category/${product.category}/${product.id}`}
                   onClick={redirectProduct}
                 >
