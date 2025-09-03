@@ -41,9 +41,9 @@ export default async function ProductIdPage({params}: {params: {id: string}}) {
       <section className="mx-5 my-20 flex flex-col gap-2">
         <h1 className="text-xl font-medium">Descripción</h1>
         <ul>
-          {product.width && <li>Altura: {product.width} cm </li>}
+          {product.width && <li>Ancho: {product.width} cm </li>}
           {product.height && <li>Altura: {product.height} cm </li>}
-          {product.depth && <li>Altura: {product.depth} cm </li>}
+          {product.depth && <li>Profundidad: {product.depth} cm </li>}
           <br />
           <ul className="flex flex-col gap-3">
             <li>Características generales:</li>
